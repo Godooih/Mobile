@@ -6,4 +6,8 @@ void main(){
   //chamada idade
   int idade = 29;
   print("Idade: $idade");
+
+  //Declarando variavel do tipo double
+  double raio = 10.25;
+  print("Raio: $raio");
 }
