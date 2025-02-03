@@ -10,4 +10,13 @@ void main(){
   //Declarando variavel do tipo double
   double raio = 10.25;
   print("Raio: $raio");
+
+  //Declarando variavel do tipo String
+
+  String nome = "Daniel";
+  print("Nome: $nome");
+  print("Olá $nome! Seja bem vindo!");
+
+  //declarando variaveis Booleanas
+  bool st=
 }
