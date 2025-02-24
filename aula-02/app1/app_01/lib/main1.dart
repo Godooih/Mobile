@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      //remove o banner de debug do aplicativo
+      // remove o banner de debug do aplicativo
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -30,10 +30,11 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
+        
       ),
-      home: const MyHomePage(title: 'App aula 01 mobile'),
+      home: const MyHomePage(title: 'App aula 02 Mobile'),
     );
   }
 }
@@ -71,21 +72,23 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
 void _resetCounter(){
-  // a função set state gerencia o estado do
-  setState(() {
-    _counter = 0;
-  });
+  // a funçao set state gerencia o estado do aplicativo gerenciando as variaveis
+ setState(() {
+   _counter=0; // zera a variavel counter
+ });
 
+}
 void _decrementCounter(){
   setState(() {
-    if(_counter > 0){
+    // o botao so decrementa o contador se ele for maior do que zero
+    if(_counter>0){
       _counter--;
-    }else{
-      _counter = 0;
+    }
+    else{
+      _counter =0;
     }
   });
 }
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -95,6 +98,7 @@ void _decrementCounter(){
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      
       appBar: AppBar(
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
@@ -123,7 +127,7 @@ void _decrementCounter(){
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            //Widget text tem uma propriedade chamada Style e esse style tem o Text Style
+            // Widget Text tem um propriedade chamada Style e esse style tem o Text Style
             const Text(
               'Contador',style: TextStyle(fontSize: 22),
             ),
@@ -135,18 +139,18 @@ void _decrementCounter(){
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 ElevatedButton(onPressed: _resetCounter, child: Text("Reset")),
-                ElevatedButton(onPressed: _incrementCounter, child: Icon(Icons.add)),
+              ElevatedButton(onPressed: _incrementCounter, child: Icon(
+              Icons.add)),
+              ElevatedButton(onPressed: _decrementCounter, child: Icon(
+                Icons.reset_tv
+              ))
               ],
             ),
-            
+           
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      
     );
   }
 }
