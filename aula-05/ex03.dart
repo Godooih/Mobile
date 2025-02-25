@@ -1,17 +1,36 @@
+/* 
+Exemplo classe com atributos privados
+24.02.2025
+*/
+
 class Pessoa{
-  String? _nome;
+ String? _nome ; //  _ representa atributo privado
 
-  String? SetNome(String nome){
-    _nome = nome;
-  }
+ void setNome(String nome){
+   _nome = nome;
+ }
 
-  String? GetNome(){
-    return _nome;
+ String? getNome(){
+  return _nome;
+ }
+}
+
+class Aluno{
+  String? nome;
+   getNome(){
+    return nome;
   }
 }
 
 void main(){
-  Pessoa cliente = Pessoa();;
+  Pessoa cliente = Pessoa();
   cliente._nome="Thales";
-  print("O nome do cliente é: ${cliente.GetNome()}");
+  print("Nome do cliente: ${ cliente.getNome()}");
+  Pessoa Thales = Pessoa();
+  Thales._nome = "Godoi";
+  print("${Thales.getNome()}");
+  Aluno Pedro = Aluno();
+  Pedro.nome= "Pedro";
+  print("${Pedro.getNome()}");
+  
 }
